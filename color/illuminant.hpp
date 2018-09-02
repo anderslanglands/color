@@ -11,10 +11,10 @@ struct Illuminant {
 
     static const SPD D65;
 
-    static const std::unordered_map<ID, const SPD&> map;
+    static const std::unordered_map<int, const SPD&> map;
 
     static auto get(ID id) -> const SPD& {
-        return map.at(id);
+        return map.at(int(id));
     }
 };
 

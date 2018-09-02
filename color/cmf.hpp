@@ -19,9 +19,9 @@ struct CMF {
 
 
     static const CMF& get(ID cmf) {
-        return _cmf_map.at(cmf);
+        return _cmf_map.at(int(cmf));
     }
-    
+
     const SPD& x_bar;
     const SPD& y_bar;
     const SPD& z_bar;
@@ -45,6 +45,6 @@ struct CMF {
     static const SPD CIE_2012_10_z;
 
 private:
-    static const std::unordered_map<ID, const CMF&> _cmf_map;
+    static const std::unordered_map<int, const CMF&> _cmf_map;
 };
 }

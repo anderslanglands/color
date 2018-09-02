@@ -13,9 +13,9 @@ include(GNUInstallDirs)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+# set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
-find_package(OpenEXR REQUIRED)
+find_package(IlmBase 2.2 REQUIRED)
 
 add_library(color SHARED
   color/cmf.cpp
@@ -28,8 +28,7 @@ add_library(color SHARED
 target_include_directories(color PUBLIC ${CMAKE_SOURCE_DIR})
 target_include_directories(color PUBLIC ${CMAKE_SOURCE_DIR}/thirdparty)
 target_include_directories(color PUBLIC ${CMAKE_SOURCE_DIR}/thirdparty/spdlog/include)
-target_include_directories(color PUBLIC ${OPENEXR_INCLUDE_DIR})
-target_link_libraries(color PUBLIC ${OPENEXR_LIBRARIES})
+target_link_libraries(color PUBLIC IlmBase::Imath)
 set_target_properties(color PROPERTIES VERSION ${COLOR_VERSION} SOVERSION ${COLOR_VERSION_MAJOR}.${COLOR_VERSION_MINOR})
 
 add_executable(test_color test/test_color.cpp)

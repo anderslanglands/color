@@ -11,11 +11,11 @@ const CMF CMF::CIE_2012_2degree(CMF::CIE_2012_2_x, CMF::CIE_2012_2_y,
 const CMF CMF::CIE_2012_10degree(CMF::CIE_2012_10_x, CMF::CIE_2012_10_y,
                                  CMF::CIE_2012_10_z);
 
-const std::unordered_map<CMF::ID, const CMF&> CMF::_cmf_map{
-    {CMF::ID::CIE_1931_2degree, CMF::CIE_1931_2degree},
-    {CMF::ID::CIE_1964_10degree, CMF::CIE_1964_10degree},
-    {CMF::ID::CIE_2012_2degree, CMF::CIE_2012_2degree},
-    {CMF::ID::CIE_2012_10degree, CMF::CIE_2012_10degree}
+const std::unordered_map<int, const CMF&> CMF::_cmf_map{
+    {int(CMF::ID::CIE_1931_2degree), CMF::CIE_1931_2degree},
+    {int(CMF::ID::CIE_1964_10degree), CMF::CIE_1964_10degree},
+    {int(CMF::ID::CIE_2012_2degree), CMF::CIE_2012_2degree},
+    {int(CMF::ID::CIE_2012_10degree), CMF::CIE_2012_10degree}
 };
 
 const SPD CMF::CIE_1931_2_x(

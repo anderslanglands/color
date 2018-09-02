@@ -29,8 +29,8 @@ const SPD Illuminant::D65(
      63.592700,  55.005400,  46.418200,  56.611800,  66.805400,  65.094100,
      63.382800});
 
-const std::unordered_map<Illuminant::ID, const SPD&> Illuminant::map{
-    {Illuminant::ID::D65, Illuminant::D65}
+const std::unordered_map<int, const SPD&> Illuminant::map{
+    {int(Illuminant::ID::D65), Illuminant::D65}
 };
 
 }
